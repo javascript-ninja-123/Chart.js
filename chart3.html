@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>D3</title>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script> -->
+		<style>
+    #barchart{
+      width:80%;
+      margin:0 auto !important;
+      display:block;
+    }
+
+
+		</style>
+	
+		
+	</head>
+	<body>
+      <div id="center">
+        <canvas id="barchart"></canvas>
+      </div>
+
+
+	</body>
+	<script>
+
+  var barchartdata = {
+   labels:['Jan','Feb','Mar','Apr','May','June','Jul','Aug'],
+   datasets:[
+    {
+      label:"Green",
+      fillColor:'blue',
+      strokeColor:'blue',
+      data:[ 100,150,200,225,250,275,300,350]
+    },
+    {
+      label:'red',
+      fillColor:'purple',
+      strokeColor:'purple',
+      data:[300,250,225,200,175,150,100,75]
+    }
+
+   ]
+  }
+
+  var baroptions = {
+    barDatasetSpacing:0,
+    scaleLineColor:'black',
+    scaleFontSize:20,
+    scaleFontColor:'black',
+    stacked:true
+  }
+
+  var barchart = document.getElementById('barchart').getContext('2d');
+  new Chart(barchart).Bar(barchartdata,baroptions);
+ 
+
+   
+	</script>
+</html>

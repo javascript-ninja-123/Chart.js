@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>D3</title>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+		<style>
+
+    canvas#linechart{
+      width:600px;
+      height:400px;
+
+    }
+    div#center{
+      text-align:center;
+    }
+		</style>
+	
+		
+	</head>
+	<body>
+	 <div id="center">
+   <canvas id="linechart"></canvas>
+   </div>
+	</body>
+	<script>
+    var linechartdata = {
+      labels:['JAN','FEB','MAR','APR'],
+      datasets : [
+        {
+          label:'Green',
+          strokeColor:'pink',
+          pointColor:'blue',
+          data : [150,200,250,150]
+        },
+        {
+          label:'Blue',
+          strokeColor:'lightblue',
+          pointColor:'red',
+          data: [200,175,150,200]
+        }
+      ]
+    }
+    var lineoptions = {
+        datasetFill:false,
+        pointDotRadius:6,
+        pointDotStrokeWidth:3,
+        datasetStrokeWidth: 5,
+        // scaleLineColor:'blue',
+        // scaleLineWidth:7,
+        // scaleFontSize: 20,
+        // scaleFontColor:'black'
+
+    }
+    var linechart = document.getElementById('linechart').getContext('2d');
+    new Chart(linechart).Line(linechartdata, lineoptions);
+
+	</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>D3</title>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script> -->
+		<style>
+    #piechart{
+      width:80%;
+      margin:0 auto !important;
+      display:block;
+    }
+
+
+		</style>
+	
+		
+	</head>
+	<body>
+      <div id="center">
+        <canvas id="piechart"></canvas>
+      </div>
+
+
+	</body>
+	<script>
+
+  var piechartdata = [
+      {
+        label:'Green',
+        color:'rgba(0,200,0,1)',
+        highlight:'rgba(0,200,0,0.5)',
+        value: 5
+      },
+      {
+        label:'Red',
+        color:'rgba(200,0,0,1)',
+        highlight:'rgba(200,0,0,0.5)',
+        value: 10
+      },
+      {
+        label:'Blue',
+        color:'rgba(0,0,200,1)',
+        highlight:'rgba(0,0,200,0.5)',
+        value:15
+      },
+      {
+        label:'Black',
+        color:'rgba(0,0,0,1)',
+        highlight:'rgba(0,0,0,0.5)',
+        value : 16
+      }
+  ]
+ var pieoptions = {
+  segmentShowStroke:false,
+  percentageInnerCutout:75
+ }
+
+  var piechart = document.getElementById('piechart').getContext('2d');
+  new Chart(piechart).Doughnut(piechartdata,pieoptions);
+   
+	</script>
+</html>

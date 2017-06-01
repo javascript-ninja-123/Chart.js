@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>D3</title>	
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<style>
+
+		</style>
+	
+		
+	</head>
+	<body>
+	
+
+	</body>
+	<script>
+
+	//Dom > //data (enter)
+  //Dom < //data (exit)
+  // DOM == data (update)
+
+
+  var canvas = d3.select('body')
+                .append('svg')
+                .attr('width',500)
+                .attr('height',500);
+
+  var circle1 = canvas.append('circle')
+                 .attr('cx',50)
+              .attr('cy',100)
+              .attr('r',25);
+
+
+    var data = [10,20,30,40,50];
+
+
+    console.log(data.sort(d3.descending));
+    console.log(d3.min(data));
+    console.log(d3.max(data));
+    console.log(d3.extent(data));
+    console.log(d3.sum(data));
+    console.log(d3.mean(data));
+    console.log(d3.median(data));
+    console.log(d3.shuffle(data));
+    console.log(data.sort(d3.ascending));
+    console.log(data.sort(d3.descending));
+    console.log(d3.min(data));
+
+
+
+
+	</script>
+</html>
